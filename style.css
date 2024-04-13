@@ -1,5 +1,470 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Karla:wght@400;700&display=swap');
+
+:root {
+
+
+
+    /* ### Primary */
+
+    --DarkViolet: hsl(256, 26%, 20%);
+    --GrayishBlue: hsl(216, 30%, 68%);
+
+    /* ### Neutral */
+
+    --VeryDarkViolet: hsl(270, 9%, 17%);
+    --DarkGrayishViolet: hsl(273, 4%, 51%);
+    --VeryLightGray: hsl(0, 0%, 98%);
+
+    --fw-DM: 400;
+
+    --fw-KarlaRegular: 400;
+    --fw-KarlaBold: 700;
+}
+
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    color: inherit;
+}
+
+h1,
+h2,
+h3 {
+
+    font-family: 'DM Serif Display', serif;
+    /*headings*/
+    font-weight: var(--fw-DM);
+}
+
+body {
+    font-family: 'Karla', sans-serif;
+    font-size: 16px;
+    text-align: center;
+
+}
+
+header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+    background-color: white;
+    z-index: 5;
+}
+
+
+
+
+.dropbtn {
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: var(--VeryDarkViolet) url("images/bg-pattern-mobile-nav.svg") no-repeat fixed 100% 100%;
+    width: 100%;
+    height: 100vh;
+    top: 80px;
+    right: 0;
+    padding: 25px;
+}
+
+.dropdown-content a {
+    text-transform: uppercase;
+    padding: 12px;
+    text-decoration: none;
+    display: block;
+    transition-delay: 0.3s;
+    color: var(--VeryLightGray);
+    font-weight: var(--fw-KarlaBold);
+    letter-spacing: 2px;
+    padding: 15px 0;
+    margin: 10px 0;
+    transition: 0.4s;
+}
+
+.dropdown-content a:hover {
+    letter-spacing: 4px;
+}
+
+#viewplansBtn {
+    border: 2px solid white;
+    padding: 20px 90px;
+}
+
+.intro {
+    margin-bottom: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: var(--DarkViolet);
+
+}
+
+.image-intro {
+    display: block;
+}
+
+.introDescription {
+    padding: 90px 25px;
+    color: white;
+
+}
+
+.intro::before {
+    content: '';
+    background-image: url(images/bg-pattern-intro-left-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: left top;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 451px;
+    pointer-events: none
+}
+
+.intro::after {
+    content: '';
+    background-image: url(images/bg-pattern-intro-right-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    position: absolute;
+    bottom: -18%;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    pointer-events: none
+}
+
+.introDescription h1 {
+    font-size: 2.75rem;
+}
+
+.introDescription p {
+    margin: 30px 0;
+    line-height: 1.5;
+    font-weight: var(--fw-KarlaRegular);
+}
+
+.introDescription button {
+    border: 2px solid var(--VeryLightGray);
+    padding: 10px 20px;
+    background-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+
+.mid-section h2 {
+    font-size: 2.75rem;
+    padding: 40px 0 30px 0;
+    position: relative;
+}
+
+.mid-section h2::before {
+    content: '';
+    background: var(--DarkGrayishViolet);
+    position: absolute;
+    height: 1px;
+    width: 150px;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.flex-container {
+    padding: 0 25px;
+}
+
+.flex-container>div {
+    margin-top: 60px;
+}
+
+.flex-container h4 {
+    font-size: 1.75rem;
+    margin: 40px 0 20px 0;
+}
+
+.flex-container p {
+    color: var(--DarkGrayishViolet);
+    line-height: 1.5;
+}
+
+.last-section {
+    margin: 140px 25px;
+    padding: 70px 40px;
+    background: var(--DarkViolet) url(images/bg-pattern-how-we-work-mobile.svg) no-repeat top right;
+    color: white;
+    background-size: contain;
+}
+
+.last-section h2 {
+    font-size: 2.4rem;
+    line-height: 1.2;
+}
+
+.last-section button {
+    padding: 15px 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 40px;
+    border: 2px solid white;
+    background: transparent;
+    font-weight: var(--fw-KarlaBold);
+    transition: 0.3s;
+}
+
+.last-section button:hover,
+.introDescription button:hover {
+    cursor: pointer;
+    background-color: var(--VeryLightGray);
+    color: var(--VeryDarkViolet);
+}
+
+footer {
+    padding: 80px 0;
+    background: url(images/bg-pattern-footer-mobile.svg) no-repeat top left;
+    /* background-size: contain; */
+}
+
+.social-icons {
+    margin-top: 30px;
+    padding-bottom: 40px;
+}
+
+.social-icons ul {
+
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-icons ul li {
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.social-icons ul li:hover path {
+    fill: var(--VeryDarkViolet);
+}
+
+.footer-menu {
+    position: relative;
+    text-transform: uppercase;
+}
+
+.footer-menu::before {
+    content: '';
+    background: var(--DarkGrayishViolet);
+    position: absolute;
+    height: 1px;
+    width: 325px;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.footer-menu div {
+    padding-top: 40px;
+    letter-spacing: 1px;
+
+}
+
+.footer-menu h4 {
+    color: var(--DarkGrayishViolet);
+}
+
+.footer-menu ul {
+    margin-top: 20px;
+    list-style: none;
+}
+
+.footer-menu ul li {
+    margin-top: 20px;
+    font-weight: var(--fw-KarlaBold);
+}
+
+.footer-menu ul li:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@media (min-width:960px) {
+    body {
+        text-align: left;
+    }
+
+    header {
+        padding: 20px 160px;
+    }
+
+    .dropbtn {
+        display: none;
+    }
+
+    .dropdown-content {
+        display: flex;
+        justify-content: flex-end;
+        height: auto;
+        background-color: transparent;
+        position: static;
+        padding: 0;
+    }
+
+    .dropdown-content a {
+        padding: 0 25px;
+        margin: 0;
+        color: var(--DarkGrayishViolet);
+        align-self: center;
+    }
+
+    .dropdown-content a:hover {
+        letter-spacing: 2px;
+        color: var(--VeryDarkViolet);
+    }
+
+    #viewplansBtn {
+        margin: 0;
+        padding: 15px 25px;
+        color: var(--VeryDarkViolet);
+        border-color: var(--VeryDarkViolet);
+    }
+
+    #viewplansBtn:hover {
+        background-color: var(--VeryDarkViolet);
+        color: var(--VeryLightGray);
+    }
+
+    .intro {
+        flex-direction: row-reverse;
+        align-items: flex-start;
+        padding: 100px 160px 0 160px;
+        margin-bottom: 280px;
+        height: min-content;
+    }
+
+    .intro::before {
+        background-image: url(images/bg-pattern-intro-left-desktop.svg);
+        background-position: left bottom;
+        top: 50%;
+    }
+
+    .intro::after {
+        background-image: url(images/bg-pattern-intro-right-desktop.svg);
+        background-position: right top;
+        top: 0;
+        bottom: 0;
+    }
+
+    .image-intro {
+        margin-bottom: -160px;
+
+    }
+
+    .introDescription {
+        padding: 0;
+    }
+
+    .introDescription h1 {
+        position: relative;
+        padding-top: 90px;
+    }
+
+    .introDescription h1:before {
+        content: '';
+        background: white;
+        position: absolute;
+        height: 1px;
+        width: 150px;
+        top: 0;
+        left: 0;
+    }
+
+    .mid-section {
+        padding: 0 160px;
+    }
+
+    .flex-container {
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .flex-container div {
+        width: 30%;
+    }
+
+    .mid-section h2::before {
+        margin: 0;
+    }
+
+    .last-section {
+        margin-left: 160px;
+        margin-right: 160px;
+        background-image: url(images/bg-pattern-how-we-work-desktop.svg);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 75px;
+        padding-right: 75px;
+
+    }
+
+    .last-section h2 {
+        flex-basis: 39%;
+
+    }
+
+    .last-section button {
+        margin: 0;
+    }
+
+    footer {
+        background-image: url(images/bg-pattern-footer-desktop.svg);
+        padding-left: 160px;
+        padding-right: 160px;
+    }
+
+    .footer-logo-socials {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer-menu::before {
+        width: 100%;
+    }
+
+    .footer-menu {
+        display: flex;
+    }
+
+    .footer-menu>div {
+        width: 25%;
+    }
+
+
 }
